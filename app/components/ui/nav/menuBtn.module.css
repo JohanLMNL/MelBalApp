@@ -1,0 +1,20 @@
+.btn {
+  width: 100%;
+  border-right: 2px solid var(--secondary-border-color);
+  border-left: 2px solid var(--secondary-border-color);
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  gap: 10px;
+}
+
+.btn:hover {
+  background-color: var(--secondary-color);
+}
+
+.icon {
+  vertical-align: middle;
+}

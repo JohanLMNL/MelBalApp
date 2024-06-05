@@ -1,0 +1,120 @@
+.carte {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.functions {
+  width: 90vw;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.table {
+  margin-top: 15px;
+  width: 90vw;
+  text-align: center;
+  text-transform: capitalize;
+  border: 2px solid var(--secondary-border-color);
+  border-collapse: collapse;
+}
+
+.tableHead {
+  height: 50px;
+  background-color: var(--secondary-color);
+  border: 2px solid var(--secondary-border-color);
+}
+
+.updateIcon,
+.deleteIcon {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.updateIcon:hover {
+  color: var(--primary-color);
+}
+
+.deleteIcon:hover {
+  color: var(--alert-color);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  backdrop-filter: blur(5px);
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-color);
+  border-radius: 8px;
+  border: 2px solid var(--secondary-border-color);
+  padding: 30px;
+  text-align: center;
+  z-index: 1000;
+}
+
+.modalTitle {
+  margin: 15px;
+}
+
+.modalIcon {
+  margin: 30px;
+  background-color: var(--secondary-color);
+}
+
+.modalName {
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+.modalButtons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.addModalInputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.errorMsg {
+  color: var(--alert-color);
+  margin: 15px;
+}

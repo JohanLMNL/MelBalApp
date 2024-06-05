@@ -1,0 +1,27 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 150px;
+  height: 35px;
+  background-color: var(--secondary-color);
+  border: 2px solid var(--secondary-border-color);
+  border-radius: 8px;
+  color: var(--txt-color);
+  cursor: pointer;
+}
+
+.buttonClicked {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 150px;
+  height: 35px;
+  background-color: var(--primary-color);
+  border: 2px solid var(--primary-border-color);
+  border-radius: 8px;
+  color: var(--txt-color);
+  cursor: pointer;
+}

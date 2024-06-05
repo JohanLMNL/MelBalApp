@@ -1,0 +1,22 @@
+.Auth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.forgotMail {
+  color: var(--secondary-txt-color);
+  font-weight: 200;
+  font-style: italic;
+  cursor: pointer;
+}
+
+.forgotMail:hover {
+  color: var(--txt-color);
+}
+
+.errormsg {
+  color: var(--alert-color);
+}

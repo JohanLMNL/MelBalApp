@@ -1,0 +1,90 @@
+.resaRow {
+  display: flex;
+  align-items: center;
+  width: 1400px;
+  height: 50px;
+  background-color: var(--secondary-color);
+  border: 1px solid var(--secondary-border-color);
+  border-radius: 8px;
+  margin: 8px;
+  cursor: pointer;
+  transition: all 0.8s;
+}
+
+.resaRow:hover {
+  background-color: var(--secondary-border-color);
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nombre {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  font-size: large;
+  font-weight: 700;
+  border-radius: 8px;
+  background-color: var(--secondary-border-color);
+}
+
+.heure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 50px;
+  margin-right: 5px;
+  margin-left: 15px;
+  font-weight: 200;
+}
+
+.nom {
+  font-weight: 700;
+  width: 300px;
+}
+
+.acompte {
+  display: flex;
+  width: 70px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.table {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  font-size: large;
+  font-weight: 700;
+  border-radius: 8px;
+  border: 1px solid var(--primary-border-color);
+  background-color: var(--primary-color);
+  margin-right: 5px;
+}
+
+.commentaire {
+  display: flex;
+  width: 900px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.acompte {
+  display: flex;
+  width: 70px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+}

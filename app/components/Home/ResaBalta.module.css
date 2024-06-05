@@ -1,0 +1,27 @@
+.resasBalta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  height: 60px;
+  background-color: var(--secondary-color);
+  border: 1px solid var(--secondary-border-color);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 60px;
+}
+
+.txt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 60px;
+}

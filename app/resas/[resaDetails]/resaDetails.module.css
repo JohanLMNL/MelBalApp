@@ -1,0 +1,36 @@
+.resaDetails {
+  width: 100vw;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.salleBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 45px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.actionBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
