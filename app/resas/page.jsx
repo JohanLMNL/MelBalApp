@@ -113,6 +113,7 @@ const Stats = () => {
   const [resaData, setResaData] = useState({
     salle: null,
     nom: null,
+    tel: null,
     nombre: null,
     date: null,
     heure: null,
@@ -171,6 +172,7 @@ const Stats = () => {
           {
             salle: resaData.salle,
             nom: resaData.nom,
+            tel: resaData.tel,
             nombre: resaData.nombre,
             date: resaData.date,
             heure: resaData.heure,
@@ -296,7 +298,7 @@ const Stats = () => {
                     : formatHeure(resa.heure)
                 }
                 nom={resa.nom}
-                acompte={resa.acompte}
+                acompte={resa.acompte == null ? '0' : resa.acompte}
                 commentaire={resa.commentaire}
                 table={resa.table == null ? '-' : resa.table}
               />
@@ -320,9 +322,9 @@ const Stats = () => {
             />
           </div>
           <div className={styles.modalInputs}>
+            <label>Nom*</label>
             <Input
               type='text'
-              placeholder='Nom'
               onChange={(e) =>
                 setResaData((prev) => ({
                   ...prev,
@@ -330,9 +332,19 @@ const Stats = () => {
                 }))
               }
             />
+            <label>Telephone</label>
+            <Input
+              type='tel'
+              onChange={(e) =>
+                setResaData((prev) => ({
+                  ...prev,
+                  tel: e.target.value,
+                }))
+              }
+            />
+            <label>Nombre de Personnes*</label>
             <Input
               type='number'
-              placeholder='Nombre de Personnes'
               onChange={(e) =>
                 setResaData((prev) => ({
                   ...prev,
@@ -340,9 +352,9 @@ const Stats = () => {
                 }))
               }
             />
+            <label>Date*</label>
             <Input
               type='date'
-              placeholder='Date'
               onChange={(e) =>
                 setResaData((prev) => ({
                   ...prev,
@@ -350,9 +362,9 @@ const Stats = () => {
                 }))
               }
             />
+            <label>Heure</label>
             <Input
               type='time'
-              placeholder='heure'
               onChange={(e) =>
                 setResaData((prev) => ({
                   ...prev,
@@ -360,9 +372,9 @@ const Stats = () => {
                 }))
               }
             />
+            <label>Acompte</label>
             <Input
               type='number'
-              placeholder='Acompte'
               onChange={(e) =>
                 setResaData((prev) => ({
                   ...prev,
@@ -370,8 +382,8 @@ const Stats = () => {
                 }))
               }
             />
+            <label>Commentaire</label>
             <TextArea
-              placeholder='Commentaire'
               onChange={(e) =>
                 setResaData((prev) => ({
                   ...prev,
@@ -379,9 +391,9 @@ const Stats = () => {
                 }))
               }
             />
+            <label>Table</label>
             <Input
               type='number'
-              placeholder='Table'
               onChange={(e) =>
                 setResaData((prev) => ({
                   ...prev,

@@ -14,6 +14,7 @@ import {
   ChevronLeftIcon,
   PlusIcon,
   Cross1Icon,
+  ExclamationTriangleIcon,
 } from '@radix-ui/react-icons';
 
 import styles from './resaDetails.module.css';
@@ -29,11 +30,13 @@ const resaDetails = () => {
   const id = useParams();
   const [isMelkior, setIsMelkior] = useState(false);
   const [isBalta, setIsBalta] = useState(false);
+  const [deleteResa, setDeleteResa] = useState(false);
 
   const [resaData, setResaData] = useState({
     id: null,
     salle: null,
     nom: null,
+    tel: null,
     nombre: null,
     date: null,
     heure: null,
@@ -59,6 +62,7 @@ const resaDetails = () => {
             id: reservation.id,
             salle: reservation.salle,
             nom: reservation.nom,
+            tel: reservation.tel,
             nombre: reservation.nombre,
             date: reservation.date,
             heure: reservation.heure,
@@ -151,6 +155,7 @@ const resaDetails = () => {
           />
         </div>
         <div className={styles.inputs}>
+          <label>Nom*</label>
           <Input
             type='text'
             value={resaData.nom}
@@ -161,6 +166,18 @@ const resaDetails = () => {
               }))
             }
           />
+          <label>Telephone</label>
+          <Input
+            type='tel'
+            value={resaData.tel}
+            onChange={(e) =>
+              setResaData((prev) => ({
+                ...prev,
+                tel: e.target.value,
+              }))
+            }
+          />
+          <label>Nombre de personne*</label>
           <Input
             type='number'
             value={resaData.nombre}
@@ -171,6 +188,7 @@ const resaDetails = () => {
               }))
             }
           />
+          <label>Date*</label>
           <Input
             type='date'
             value={resaData.date}
@@ -181,6 +199,7 @@ const resaDetails = () => {
               }))
             }
           />
+          <label>Heure</label>
           <Input
             type='time'
             value={resaData.heure}
@@ -191,6 +210,7 @@ const resaDetails = () => {
               }))
             }
           />
+          <label>Acompte</label>
           <Input
             type='number'
             value={resaData.acompte}
@@ -201,6 +221,7 @@ const resaDetails = () => {
               }))
             }
           />
+          <label>Commentaire</label>
           <TextArea
             value={resaData.commentaire}
             onChange={(e) =>
@@ -210,6 +231,7 @@ const resaDetails = () => {
               }))
             }
           />
+          <label>Table</label>
           <Input
             type='number'
             value={resaData.table}
@@ -231,7 +253,7 @@ const resaDetails = () => {
           </GButton>
           <GButton
             style='alert'
-            onClick={() => deleteResaById(resaData.id)}
+            onClick={() => setDeleteResa(true)}
             endIcon={<Cross1Icon />}
           >
             Supprimer
@@ -244,6 +266,38 @@ const resaDetails = () => {
           </GButton>
         </div>
       </div>
+      {deleteResa && <div className={styles.overlay}></div>}
+      {deleteResa && (
+        <div className={styles.modal}>
+          <div className={styles.modalIcon}>
+            <ExclamationTriangleIcon />
+          </div>
+          <p className={styles.modalTitle}>
+            Êtes-vous sur de vouloir supprimer la reservation
+            <span className={styles.modalName}>
+              {' '}
+              {resaData.nom}
+            </span>{' '}
+            ?
+          </p>
+          <div className={styles.modalBtn}>
+            <GButton
+              style='secondary'
+              startIcon={<ChevronLeftIcon />}
+              onClick={() => setDeleteResa(false)}
+            >
+              Retour
+            </GButton>
+            <GButton
+              style='alert'
+              endIcon={<Cross1Icon />}
+              onClick={() => deleteResaById(resaData.id)}
+            >
+              Supprimer
+            </GButton>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
