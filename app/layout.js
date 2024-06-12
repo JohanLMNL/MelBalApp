@@ -3,9 +3,13 @@ import './globals.css';
 export const metadata = {
   title: 'MelBal Dashboard',
   icons: {
-    icon: ['/favicon/favicon-32x32.png'],
-    apple: ['/apple-icon.png'],
-    shortcut: ['/apple-icon.png'],
+    icon: '/favicon/favicon-32x32.png',
+    shortcut: '/favicon/favicon-32x32.png',
+    apple: '/favicon/apple-icon.png',
+    other: {
+      rel: 'apple-touch-icon-precomposed',
+      url: '/favicon/apple-icon.png',
+    },
   },
 };
 
