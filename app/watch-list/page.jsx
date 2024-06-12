@@ -3,7 +3,6 @@ import Header from '../components/ui/Header';
 import styles from './watch-list.module.css';
 import ResasBalta from '../components/Home/ResasBalta';
 import ResaMel from '../components/Home/ResaMel';
-import { Label } from '@headlessui/react';
 
 const WatchList = () => {
   return (
@@ -13,7 +12,7 @@ const WatchList = () => {
         <h1>Welcome.</h1>
         <ResaMel />
         <ResasBalta />
-        <p>v.0.1.4</p>
+        <p>v.0.1.05</p>
       </div>
     </div>
   );

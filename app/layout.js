@@ -1,7 +1,7 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'Kommands Dashboard',
+  title: 'MelBal Dashboard',
   icons: {
     icon: ['/favicon/favicon-32x32.png'],
     apple: ['/apple-icon.png'],
