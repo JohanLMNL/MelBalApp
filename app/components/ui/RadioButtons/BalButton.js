@@ -12,7 +12,7 @@ const BalButton = ({ onClick, isClicked }) => {
       className={isClicked ? styles.buttonClicked : styles.button}
       onClick={handleClick}
     >
-      <Image
+      <img
         className={styles.mellogo}
         src='/logoBalButtons.svg'
         alt='Logo Bal'

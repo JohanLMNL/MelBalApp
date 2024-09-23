@@ -3,7 +3,6 @@
   align-items: center;
   justify-content: center;
   gap: 5px;
-  width: 150px;
   height: 35px;
   background-color: var(--primary-color);
   border: 2px solid var(--primary-border-color);
@@ -22,7 +21,6 @@
   align-items: center;
   justify-content: center;
   gap: 5px;
-  width: 150px;
   height: 35px;
   background-color: var(--secondary-color);
   border: 2px solid var(--secondary-border-color);
@@ -41,7 +39,6 @@
   align-items: center;
   justify-content: center;
   gap: 5px;
-  width: 150px;
   height: 35px;
   background-color: var(--alert-color);
   border: 2px solid var(--alert-border-color);

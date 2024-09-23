@@ -13,7 +13,7 @@ const MelButton = ({ onClick, isClicked }) => {
       onClick={handleClick}
       isClicked={isClicked}
     >
-      <Image
+      <img
         className={styles.mellogo}
         src='/logoMelButtons.svg'
         alt='Logo Mel'

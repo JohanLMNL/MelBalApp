@@ -1,24 +1,33 @@
 import React from 'react';
 import styles from './GButton.module.css';
 
-const GButton = (props) => {
+const GButton = ({
+  style,
+  onClick,
+  startIcon,
+  endIcon,
+  children,
+  width = '150px',
+  ...props
+}) => {
   const styleClassMapping = {
     primary: styles.GButton,
     secondary: styles.SButton,
     alert: styles.AButton,
   };
 
-  const buttonClass =
-    styleClassMapping[props.style] || styles.GButton;
+  const buttonClass = styleClassMapping[style] || styles.GButton;
 
   return (
     <button
       className={buttonClass}
-      onClick={props.onClick}
+      onClick={onClick}
+      style={{ width }}
+      {...props}
     >
-      {props.startIcon}
-      {props.children}
-      {props.endIcon}
+      {startIcon && <span className={styles.icon}>{startIcon}</span>}
+      {children}
+      {endIcon && <span className={styles.icon}>{endIcon}</span>}
     </button>
   );
 };

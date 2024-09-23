@@ -40,12 +40,11 @@ export default function AuthForm() {
             email,
             password,
           });
+        router.push('/watch-list');
 
         if (error) {
           setErrormsg("Nom d'utilisateur ou mot de passe incorrect");
           return;
-        } else {
-          router.push('/watch-list');
         }
       }
     } catch (error) {

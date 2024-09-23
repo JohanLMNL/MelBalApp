@@ -5,7 +5,11 @@ import { useRouter } from 'next/navigation';
 import { createClient } from '@supabase/supabase-js';
 
 import styles from './NouvelleResa.module.css';
-import { ChevronLeftIcon, PlusIcon } from '@radix-ui/react-icons';
+import {
+  ChevronLeftIcon,
+  PlusIcon,
+  AllSidesIcon,
+} from '@radix-ui/react-icons';
 
 import Header from '@/app/components/ui/Header';
 import MelButton from '@/app/components/ui/RadioButtons/MelButton';
@@ -13,6 +17,8 @@ import BalButton from '@/app/components/ui/RadioButtons/BalButton';
 import Input from '@/app/components/ui/Input';
 import TextArea from '@/app/components/ui/TextArea';
 import GButton from '@/app/components/ui/GButton';
+import MelkiorModal from '@/app/components/NouvelleResaComponents/MelkiorModal';
+import BaltaModal from '@/app/components/NouvelleResaComponents/BaltaModal';
 
 const NouvelleResa = () => {
   const router = useRouter();
@@ -25,12 +31,16 @@ const NouvelleResa = () => {
   const [isBalta, setIsBalta] = useState(false);
   const [isError, setIsError] = useState(false);
 
+  const today = new Date().toISOString().split('T')[0];
+
+  const [openModal, setOpenModal] = useState(false);
+
   const [resaData, setResaData] = useState({
     salle: null,
     nom: null,
     tel: null,
     nombre: null,
-    date: null,
+    date: today,
     heure: null,
     acompte: null,
     commentaire: null,
@@ -143,6 +153,7 @@ const NouvelleResa = () => {
               <Input
                 type='date'
                 width='150px'
+                value={resaData.date}
                 onChange={(e) =>
                   setResaData((prev) => ({
                     ...prev,
@@ -156,6 +167,7 @@ const NouvelleResa = () => {
               <Input
                 type='time'
                 width='150px'
+                value={resaData.date}
                 onChange={(e) =>
                   setResaData((prev) => ({
                     ...prev,
@@ -208,22 +220,40 @@ const NouvelleResa = () => {
             Vous devez remplir tous les champs
           </p>
         )}
-        <div className={styles.buttons}>
-          <GButton
-            style='secondary'
-            onClick={() => router.push('/resas')}
-            startIcon={<ChevronLeftIcon />}
-          >
-            Retour
-          </GButton>
-          <GButton
-            endIcon={<PlusIcon />}
-            onClick={() => handleSendResa()}
-          >
-            Ajouter
-          </GButton>
+        <div className={styles.allbuttons}>
+          {resaData.salle !== null && (
+            <GButton
+              style='secondary'
+              endIcon={<AllSidesIcon />}
+              onClick={() => setOpenModal(true)}
+              width='345px'
+            >
+              Plan de Salle
+            </GButton>
+          )}
+          <div className={styles.buttons}>
+            <GButton
+              style='secondary'
+              onClick={() => router.push('/resas')}
+              startIcon={<ChevronLeftIcon />}
+            >
+              Retour
+            </GButton>
+            <GButton
+              endIcon={<PlusIcon />}
+              onClick={() => handleSendResa()}
+            >
+              Ajouter
+            </GButton>
+          </div>
         </div>
       </div>
+      {openModal &&
+        (resaData.salle === 'melkior' ? (
+          <MelkiorModal onClick={() => setOpenModal(false)} />
+        ) : (
+          <BaltaModal onClick={() => setOpenModal(false)} />
+        ))}
     </div>
   );
 };

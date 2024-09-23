@@ -13,6 +13,7 @@ import MelButton from '../components/ui/RadioButtons/MelButton';
 import BalButton from '../components/ui/RadioButtons/BalButton';
 import ResaRow from '../components/ResasComponents/ResaRow';
 import ResaRowOnPC from '../components/ResasComponents/ResaRowOnPC';
+import PrintResa from '../components/ResasComponents/PrintResa';
 
 const Stats = () => {
   const [tri, setTri] = useState({
@@ -158,6 +159,7 @@ const Stats = () => {
           >
             Ajouter une Résa
           </GButton>
+          <PrintResa />
         </div>
       </div>
       <div>
