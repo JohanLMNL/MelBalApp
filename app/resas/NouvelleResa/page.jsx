@@ -167,7 +167,7 @@ const NouvelleResa = () => {
               <Input
                 type='time'
                 width='150px'
-                value={resaData.date}
+                value={resaData.heure}
                 onChange={(e) =>
                   setResaData((prev) => ({
                     ...prev,

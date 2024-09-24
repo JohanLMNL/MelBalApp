@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import styles from './MelButtons.module.css';
 
@@ -11,9 +11,8 @@ const MelButton = ({ onClick, isClicked }) => {
     <div
       className={isClicked ? styles.buttonClicked : styles.button}
       onClick={handleClick}
-      isClicked={isClicked}
     >
-      <img
+      <Image
         className={styles.mellogo}
         src='/logoMelButtons.svg'
         alt='Logo Mel'

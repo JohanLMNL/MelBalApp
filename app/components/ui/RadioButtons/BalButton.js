@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import styles from './MelButtons.module.css';
 
@@ -12,7 +12,7 @@ const BalButton = ({ onClick, isClicked }) => {
       className={isClicked ? styles.buttonClicked : styles.button}
       onClick={handleClick}
     >
-      <img
+      <Image
         className={styles.mellogo}
         src='/logoBalButtons.svg'
         alt='Logo Bal'

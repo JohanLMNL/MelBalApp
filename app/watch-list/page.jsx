@@ -12,7 +12,7 @@ const WatchList = () => {
         <h1>Welcome.</h1>
         <ResaMel />
         <ResasBalta />
-        <p>v.0.1.1</p>
+        <p>v.0.1.2</p>
       </div>
     </div>
   );
